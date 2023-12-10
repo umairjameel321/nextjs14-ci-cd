@@ -2,6 +2,7 @@
   "name": "next14cicd",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://umairjameel321.github.io/nextjs14-ci-cd",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
