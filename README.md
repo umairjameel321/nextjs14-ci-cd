@@ -34,3 +34,19 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Commands I used for configuration of CI/CD in this project.
+
+npm install --save-dev prettier eslint-config-prettier eslint-plugin-prettier
+
+npm install --save-dev husky lint-staged
+
+git init
+npx husky install
+npx husky add .husky/pre-commit "npx lint-staged"
+
+npm install --save-dev @commitlint/{cli,config-conventional}
+
+npx husky add .husky/commit-msg 'npx --no-install commitlint --edit "$1"'  Now create commitlint.config.cjs
+
+// adding this will create static site for next.js 14 for GitHub pages const nextConfig = { output: 'export’}
