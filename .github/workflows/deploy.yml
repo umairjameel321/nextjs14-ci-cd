@@ -28,23 +28,9 @@ jobs:
       - name: Deploy to prod url
         # main is the branch name where new code is pushed
         if: github.ref == 'refs/heads/main'
-
-        uses: JamesIves/github-pages-deploy-action@4.1.4
+        uses: CDNievas/heroku-action@v1.0
         with:
-          branch: gh-pages # The branch the action should deploy to.
-          folder: out # The folder the action should deploy.
-
-
-        # uses: peaceiris/actions-gh-pages@v3
-        # with:
-        #   github_token: ${{ secrets.GITHUB_TOKEN }}
-        #   publish_dir: ./dist
-        # publish_branch: prod-gh-pages  // by default it will create gh-pages branch and push everything of dist folder inside it.
-
-    # - name: Deploy to dev url
-    #   if: github.ref == 'refs/heads/develop'
-    #   uses: peaceiris/actions-gh-pages@v3
-    #   with:
-    #     github_token: ${{ secrets.GITHUB_TOKEN }}
-    #     publish_dir: ./dist
-    #     # publish_branch: dev-gh-pages
+          heroku_email: ${{ secrets.HEROKU_EMAIL }}
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: 'nextjs14-demo'
+          # build_dir: 'your-build-directory' # Change this to your build directory if different from the root
